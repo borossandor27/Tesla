@@ -13,9 +13,11 @@
 <p>2017. július 28-án átadták az első 30 Model 3-at a tulajdonosaiknak (mind Tesla alkalmazott). Az autóra ekkor a Tesla 455 ezer előrendeléssel rendelkezett A vállalat 2018 júliusában jelentette be, hogy sikerült elérniük az eredetileg kitűzött termelési célt, a hetenkénti 5 000 autó legyártását. Európába 2019 februárjában érkeznek az első megrendelések, miután az illetékesek megadták rá az engedélyt. </p>
 <script>
 function changeColor(){
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    var randomColor = Math.floor(Math.random()*16777215); //-- 16777216 = 256 * 256 *256
+    var invertColor = 16777215 - randomColor;
     console.log(randomColor);
-    document.getElementById("elso").style.backgroundColor = "#" + randomColor;
+    document.getElementById("elso").style.backgroundColor = "#" + randomColor.toString(16);
+    document.getElementById("elso").style.color = "#" + invertColor.toString(16);
 }
 const elem = document.getElementById("elso");
 elem.addEventListener("click", changeColor, false);
